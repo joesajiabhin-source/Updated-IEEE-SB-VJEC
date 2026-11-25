@@ -1,0 +1,1001 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sketch: var(--font-umbral), var(--font-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-poster: var(--font-anton), var(--font-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  /* IEEE SB VJEC identity */
+  --color-ieee: #00629b;
+  --color-ieee-strong: #014f80;
+  --color-ink: #0b1322;
+  --color-mist: #f4f7fa;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  ::selection {
+    background: rgb(0 98 155 / 0.18);
+  }
+  :focus-visible {
+    outline: 2px solid rgb(0 98 155 / 0.75);
+    outline-offset: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced motion: honor the user preference everywhere, including scroll
+   behavior and the universal animation dampener.
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Ambient background — subtle film grain over the whole page (fixed layer,
+   pointer transparent, a few percent of luminance noise).
+--------------------------------------------------------------------------- */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+}
+
+/* Soft, restrained gradient lighting for the hero. No blobs, no neon. The
+   first layer is a faint blue atmosphere centered on the emblem — it grounds
+   the artwork without competing with it. The fourth layer (right flank)
+   breathes a whisper of the same atmosphere across the air between the
+   artwork and the statistics rail, so the right edge reads as part of the
+   same poster rather than a detached margin. */
+.hero-light {
+  background:
+    radial-gradient(44% 34% at 50% 55%, rgb(0 98 155 / 0.07), transparent 72%),
+    radial-gradient(58% 46% at 50% -6%, rgb(0 98 155 / 0.1), transparent 72%),
+    radial-gradient(34% 26% at 88% 14%, rgb(0 98 155 / 0.05), transparent 70%),
+    radial-gradient(30% 42% at 79% 52%, rgb(0 98 155 / 0.04), transparent 70%),
+    radial-gradient(38% 30% at 4% 84%, rgb(0 98 155 / 0.045), transparent 70%);
+}
+
+/* ---------------------------------------------------------------------------
+   Liquid Glass surfaces
+--------------------------------------------------------------------------- */
+.glass-nav {
+  background: rgb(255 255 255 / 0.58);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  backdrop-filter: blur(18px) saturate(1.6);
+  border: 1px solid rgb(255 255 255 / 0.75);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.9),
+    0 12px 36px -12px rgb(10 35 70 / 0.22),
+    0 2px 8px -2px rgb(10 35 70 / 0.08);
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+.glass-nav--scrolled {
+  background: rgb(255 255 255 / 0.74);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.95),
+    0 16px 44px -14px rgb(10 35 70 / 0.28);
+}
+
+.nav-link {
+  color: rgb(51 65 85);
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.nav-link:hover {
+  color: #0b1322;
+  background: rgb(255 255 255 / 0.55);
+}
+.nav-link[data-active="true"] {
+  color: #00629b;
+  background: rgb(255 255 255 / 0.82);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 1),
+    0 4px 14px -6px rgb(10 35 70 / 0.2);
+}
+
+/* The circular liquid-glass Home button. */
+.home-orb {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 110% at 28% 6%, rgb(255 255 255 / 0.95), rgb(255 255 255 / 0.3) 46%, rgb(255 255 255 / 0.12) 72%),
+    rgb(255 255 255 / 0.42);
+  -webkit-backdrop-filter: blur(10px) saturate(1.5);
+  backdrop-filter: blur(10px) saturate(1.5);
+  border: 1px solid rgb(255 255 255 / 0.85);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.95),
+    inset 0 -6px 12px -8px rgb(10 35 70 / 0.25),
+    0 6px 16px -8px rgb(10 35 70 / 0.25);
+  transition:
+    box-shadow 0.35s ease,
+    background-color 0.35s ease,
+    color 0.3s ease;
+}
+.home-orb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(90% 60% at 30% 0%, rgb(255 255 255 / 0.9), transparent 55%);
+  pointer-events: none;
+}
+/* Sheen sweep on hover */
+.home-orb::after {
+  content: "";
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(105deg, transparent 38%, rgb(255 255 255 / 0.7) 50%, transparent 62%);
+  transform: translateX(-72%) rotate(8deg);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.home-orb:hover::after {
+  transform: translateX(72%) rotate(8deg);
+}
+.home-orb[data-active="true"] {
+  color: #00629b;
+  background:
+    radial-gradient(120% 110% at 28% 6%, rgb(255 255 255 / 1), rgb(255 255 255 / 0.5) 46%, rgb(255 255 255 / 0.22) 72%),
+    rgb(255 255 255 / 0.78);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 1),
+    inset 0 -8px 14px -10px rgb(0 98 155 / 0.35),
+    0 8px 22px -8px rgb(0 98 155 / 0.4),
+    0 0 0 1px rgb(0 98 155 / 0.18);
+}
+
+.glass-sheet {
+  background: rgb(244 247 250 / 0.92);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  backdrop-filter: blur(24px) saturate(1.6);
+  box-shadow: 0 24px 60px -20px rgb(10 35 70 / 0.32);
+}
+
+/* ---------------------------------------------------------------------------
+   Hero display typography — a hand-drawn "IEEE SB" over a dominant "VJEC",
+   exactly like the sketched reference: pen-hatched Umbral Rift Display for the
+   branch name, and for the wordmark a condensed poster face (Anton VJEC,
+   applied via the `font-poster` utility) whose caps stand 0.859em tall over a
+   narrow 1.82em glyph run — so "VJEC" TOWERS instead of spreading wide.
+--------------------------------------------------------------------------- */
+
+/* "IEEE SB" — set in Umbral Rift Display (applied via the `font-sketch`
+   utility from the theme), a hand-drawn, pen-hatched display face: each
+   letter is built from real pen strokes, so the sketched texture IS the
+   design and the line renders solid at its natural Regular weight (faux-
+   bold would smear the hatching). The line box is a tight 0.82em: Umbral's
+   real ink spans 0.733–0.746em above the baseline (cap height 0.734em)
+   with only -0.007em below, so a 1em box would waste 0.18em of the
+   poster's height budget on air — at the poster's scale that air belongs
+   to the wordmark. The glyphs still clear the box (no clipping: the
+   paragraph is never overflow-hidden), and every saved em goes straight
+   into taller letters. The two words stay ONE unified heading — the
+   word-spacing is tightened to a small +0.05em on top of the face's own
+   natural space (≈0.3em total breath between "IEEE" and "SB", never a
+   scatter — display type tightens its word-space as it grows) — and the
+   line centres on the artwork zone's own axis, directly over the
+   wordmark, so branch line and wordmark read as a single stacked
+   composition. */
+.display-ieee {
+  font-weight: 400;
+  font-size: var(--ieee-size);
+  line-height: 0.82;
+  word-spacing: 0.05em;
+}
+
+/* The wordmark face is Anton VJEC, Regular only — its forms are already a
+   solid poster weight, so it is never faux-bolded (that would smear them).
+   The line box is 0.94em: the patched metrics (ascent 0.90em / descent
+   -0.07em) place the baseline 0.885em down the box, so the 0.867em-tall
+   caps and the J/C tails (-0.008em) sit fully inside the box the entrance
+   wrapper (overflow-hidden) clips to — 0.018em of head-room, 0.047em of
+   foot-room. The taller box also spends the em on HEIGHT, not air. */
+.display-vjec {
+  font-size: var(--vjec-size);
+  font-weight: 400;
+  line-height: 0.94;
+}
+
+/* The whole identity block shares one fluid font-size (the wordmark's), so
+   every em-based utility inside — the row's padding, the emblem's host, the
+   statistics' top margin — scales as one object. The wordmark row's em-based
+   vertical padding frames the line. The emblem (0.78em canvas below `lg`,
+   0.92em above; inked body ≈ 0.82 of that canvas) is a large medallion
+   standing ≈0.87 of the letters' own height that rides the line's centre
+   over the J–E seam — its ink resolves inside the row's framing, so the two
+   type lines keep the annotation's clean separation and every em of the
+   height budget is spent on the wordmark itself. Below `lg` the statistics
+   flow beneath the letters, so the row's bottom padding yields to their own
+   0.35em margin (the stack's breathing gap); from `lg` they are absolutely
+   pinned to the block's right edge and the padding goes near-zero —
+   the annotation tiles the poster edge to edge, so the desktop canvas
+   spends its whole vertical budget on the wordmark itself (0.03em above,
+   0.06em below the 0.94em line box). */
+.identity-block {
+  font-size: var(--vjec-size);
+}
+.wordmark-row {
+  font-size: var(--vjec-size);
+  padding-block: 0.36em 0;
+}
+@media (min-width: 1024px) {
+  .wordmark-row {
+    padding-block: 0.03em 0.06em;
+  }
+}
+
+/* Logo layer: centered over the wordmark via transform. Its font-size mirrors
+   the VJEC wordmark so the emblem scales with the letters (not the viewport).
+   The emblem host is 0.78em below `lg` and 0.92em above — kept substantially
+   larger than the original mark, but a notch under the letters' own height
+   so it reads as the wordmark's integrated centrepiece rather than an
+   oversized badge: at `lg` the mark's inked body (≈ 0.82 of the canvas ≈
+   0.75em) stands ≈ 0.87 of the Anton caps' height — a large medallion riding
+   the J–E seam, unmistakably
+   the IEEE element, while V and C flank it fully clear and the sparse
+   liquid particles keep J and E reading behind the glass; on phones the
+   medallion settles at ~¾ of the caps (0.74), the first sketch's own
+   balance, with a touch more clear air around the J and E. The ink still
+   resolves inside the wordmark row's own framing,
+   so the two type lines keep the clean separation.
+   The extra -0.02em on X is
+   an optical correction: it equalises the letter-to-emblem air on both
+   flanks, which pure box-centering misses because the mark's ink is slightly
+   right-heavy; the matching -0.015em on Y is the same kind of correction —
+   the mark's tailed ink reads a touch low once it rides the letters. */
+.logo-layer {
+  font-size: var(--vjec-size);
+  transform: translate(calc(-50% - 0.02em), calc(-50% - 0.015em));
+}
+
+/* Artwork zone — the artwork's stage and its overlap guard. The whole
+   left-anchored artwork (branch line + wordmark row) lives inside it.
+   Below `lg` it spans the identity block's full width (the statistics
+   flow beneath the artwork there). From `lg` its right edge stops
+   --stats-zone short of the block, exactly where the statistics rail
+   begins — the wordmark centres on this zone's own axis, so its
+   extra-large letters (and the emblem layered over them) can grow to
+   the maximum the frame allows without ever running under the side
+   text. */
+@media (min-width: 1024px) {
+  .artwork-zone {
+    margin-right: var(--stats-zone);
+  }
+}
+
+/* The wordmark. Each letter is its own flex item, and the letters sit as
+   one close poster word — LARGE POSTER TYPOGRAPHY, not screen-filling
+   type: the gap is fluid, 35% of the zone's leftover width (zone minus
+   the 1.821em glyph run) split evenly between the three gaps, clamped
+   between a 0.09em floor (a small breath — one cohesive word, never
+   tighter) and a 0.26em ceiling (a letterform lockup, never a scatter),
+   so the wordmark dominates the hero while clear, balanced poster
+   margins frame it on both flanks — no letter runs against the viewport
+   edges. The line stays centred, the letter spans are flex-locked (no
+   shrink) so they can never be squeezed, and the leftover is never
+   negative (--vjec-size's glyphs-fit cap keeps the occupied width under
+   the zone), so nothing can overflow or clip. */
+.vjec-spread {
+  display: flex;
+  justify-content: center;
+  gap: min(
+    max(0.09em, calc((100vw - 32px - 1.821 * var(--vjec-size)) / 3 * 0.35)),
+    0.26em
+  );
+}
+@media (min-width: 1024px) {
+  .vjec-spread {
+    /* The zone is the content column minus the statistics rail — but the
+       column stops growing at the 1680px container, so the zone caps at
+       1480px (1680 - 80 page padding - 120 rail); measuring 100vw alone
+       would overspread the letters past the rail on wide screens. */
+    gap: min(
+      max(
+        0.09em,
+        calc((min(100vw - 200px, 1480px) - 1.821 * var(--vjec-size)) / 3 * 0.35)
+      ),
+      0.26em
+    );
+  }
+}
+.vjec-spread .ltr {
+  flex: none;
+}
+
+/* ---------------------------------------------------------------------------
+   One poster scale — the whole identity is one connected composition set
+   like LARGE POSTER TYPOGRAPHY: a hand-drawn "IEEE SB" line kept together
+   as one unified heading, a small gap, then the dominant "VJEC" wordmark
+   with the liquid emblem layered over its centre, and the statistics
+   pinned to the composition's right edge from `lg` up (stacked beneath on
+   smaller screens) — the sketch's balancing right rail. The wordmark is
+   the biggest thing on the page by far, but it is poster type, not
+   screen-filling type: the scale sits between the sparse first version
+   and the edge-to-edge over-correction — the letters occupy roughly the
+   middle ~75% of the page width as ONE COHESIVE WORD (tight, small gaps —
+   never a scatter) with clear, balanced margins at both flanks, and the
+   height budget leaves real breathing room above and below the stack
+   instead of running the letters to the viewport's bottom edge. Two
+   variables drive everything so the composition scales as one object:
+   --vjec-size  the wordmark's font size. On desktop, capped by width (the
+                 28vw poster coefficient — deliberately a step down from the
+                 screen-filling correction, per the user's reference mockup:
+                 the letters occupy the middle ~55–60% of the page width,
+                 freeing generous margins for the reference's big hidden
+                 illustrations) hard-stopped at 34rem where the 1680px
+                 container stops growing, by the glyphs-fit guard (the
+                 2.091em occupied width — the 1.821em Anton glyph run plus
+                 the 3 × 0.09em floor gaps — must fit the artwork zone:
+                 100vw minus the 80px page padding and the 120px statistics
+                 zone, with a hair of safety, 2.10), and by height (the
+                 1.78em budget — the true 1.47em stack cost plus a third
+                 again of poster air, so the composition breathes vertically
+                 and the bottom band stays clear for the hidden campus,
+                 circuit and astronaut). Below `lg` the statistics stack
+                 beneath the row instead, so the height cap swaps to the
+                 full-stack budget and the width cap to the phone's own
+                 32px padding (42vw coefficient there).
+   --ieee-size  the branch line's font size. On phones, width-capped (its
+                 ~3.2em run with the tightened inter-word breath) and
+                 viewport-height-capped. From `lg` it is ratio-locked to
+                 the wordmark at 0.5 — the heading reads as the wordmark's
+                 own title at half its scale, one unified centred line —
+                 which frees the vertical budget for the wordmark + emblem.
+   Divisors and constants (desktop): 1.78 = the height budget per em (the
+   stack's true 1.47em cost — 0.41 "IEEE SB" line box (0.82 line-height
+   × the 0.5 ratio) + 1.03 wordmark row (0.03 + 0.94 + 0.06), plus a hair
+   of safety — plus deliberate poster air, split above and below by the
+   stack's own centring so the bottom band stays clear for the hidden
+   artwork arrangement); 110px =
+   vertical chrome (84px nav clearance + 16px bottom padding + ~10px of
+   intentional poster air, split evenly above and below the stack by its
+   own centring); 2.10
+   and 200px = the glyphs-fit width cap: the zone is the content column
+   (100vw - 80px, i.e. 40px page padding per side) minus the 120px
+   statistics zone, and the font size is capped so the letters' 2.091em
+   occupied width (measured Anton glyph run V .469 + J .466 + E .412 +
+   C .474 = 1.821em, plus the 3 × 0.09em gaps) always fits it with ~0.5%
+   of safety. 34rem = the same cap hard-stopped where the 1680px container
+   stops growing (zone = 1600px - 120px = 1480px; 34rem = 544px, whose
+   2.091em occupied width of 1138px leaves ~342px of air inside it).
+   Mobile: 300px = chrome (88px + 28px paddings + the ~184px statistics
+   stack); 1.68 = per-em cost (1.30 row (0.36 + 0.94) + the statistics'
+   0.35em top breathing gap, plus a hair of slop); the branch line's own
+   cost is subtracted as 0.8 × its size (its 0.82 line-height box).
+--------------------------------------------------------------------------- */
+:root {
+  --stats-zone: 120px;
+  --vjec-size: min(
+    clamp(7.5rem, 42vw, 30rem),
+    calc((100vw - 40px) / 2.10),
+    40vh,
+    calc((100vh - 300px - (0.8 * var(--ieee-size))) / 1.68)
+  );
+  --ieee-size: min(clamp(4.75rem, 26vw, 21rem), 25vh);
+}
+@media (min-width: 1024px) {
+  :root {
+    --vjec-size: min(
+      clamp(8rem, 28vw, 34rem),
+      calc((100vw - 200px) / 2.10),
+      calc((100vh - 110px) / 1.78)
+    );
+    --ieee-size: min(
+      clamp(4.75rem, 26vw, 21rem),
+      30vh,
+      calc(var(--vjec-size) * 0.5)
+    );
+  }
+}
+/* Short landscape viewports (rotated phones): the statistics collapse into
+   a single row and the stack budget shrinks to match — the 1.42 divisor
+   here is the row's 1.03em plus the statistics' own 0.35em top margin
+   (they still flow beneath the row, just as a single ~46–67px row, which
+   the 170px chrome absorbs alongside the 64px top and 16px bottom paddings);
+   the branch line gets
+   a tighter viewport cap here so it never ratio-locks against the wordmark
+   on short wide windows (that would make the two variables circular). The
+   7rem floor keeps the wordmark valid even when almost no height is
+   available. */
+@media (max-height: 560px) {
+  :root {
+    --vjec-size: max(
+      min(
+        clamp(7.5rem, 42vw, 30rem),
+        calc((100vw - 40px) / 2.10),
+        calc((100vh - 170px - (0.8 * var(--ieee-size))) / 1.42)
+      ),
+      7rem
+    );
+    --ieee-size: min(clamp(4.75rem, 26vw, 21rem), 18vh);
+  }
+}
+@supports (height: 1svh) {
+  :root {
+    --vjec-size: min(
+      clamp(7.5rem, 42vw, 30rem),
+      calc((100vw - 40px) / 2.10),
+      40svh,
+      calc((100svh - 300px - (0.8 * var(--ieee-size))) / 1.68)
+    );
+    --ieee-size: min(clamp(4.75rem, 26vw, 21rem), 25svh);
+  }
+  @media (min-width: 1024px) {
+    :root {
+      --vjec-size: min(
+        clamp(8rem, 28vw, 34rem),
+        calc((100vw - 200px) / 2.10),
+        calc((100svh - 110px) / 1.78)
+      );
+      --ieee-size: min(
+        clamp(4.75rem, 26vw, 21rem),
+        30svh,
+        calc(var(--vjec-size) * 0.5)
+      );
+    }
+  }
+  @media (max-height: 560px) {
+    :root {
+      --vjec-size: max(
+        min(
+          clamp(7.5rem, 42vw, 30rem),
+          calc((100vw - 40px) / 2.10),
+          calc((100svh - 170px - (0.8 * var(--ieee-size))) / 1.42)
+        ),
+        7rem
+      );
+      --ieee-size: min(clamp(4.75rem, 26vw, 21rem), 18svh);
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Entrance choreography — quick, purposeful, eased-out. All keyframes end at
+   the element's natural state; the reduced-motion dampener above collapses
+   them to a single frame.
+--------------------------------------------------------------------------- */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes clip-up {
+  from {
+    transform: translateY(108%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.anim-rise {
+  animation: rise-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+}
+.anim-clip {
+  animation: clip-up 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.28s backwards;
+}
+.anim-fade {
+  animation: fade-in 1.1s ease 0.55s backwards;
+}
+.anim-nav {
+  animation: nav-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s backwards;
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll reveal
+--------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Hidden artwork layer (see src/components/hidden-discoveries.tsx) — the
+   four pencil illustrations kept from the supplied IEEE artwork sheet
+   (satellite, circuit, astronaut, campus — the IEEE-logo emblem is NOT
+   part of the reveal; the liquid diamond on the wordmark is its only
+   presence), hidden UNDER the hero's pristine whitespace. The layer sits behind the
+   main composition (z 1 vs the content wrapper's z 10) so nothing can
+   ever cover the wordmark, the liquid emblem, "IEEE SB", the statistics
+   or the navbar. Each artwork emerges through a liquid mask: three
+   feathered radial mask blobs — the membrane, a trailing droplet and
+   their mid blend — driven per-frame by the engine's custom properties
+   (--r radius, --mx/--my membrane origin, --dx/--dy droplet, --tx/--ty
+   mid, --p energy), with a soft blue ink halo behind (opacity via --ink)
+   and a blur that resolves as the reveal completes. `is-found` drops the
+   mask once a discovery has fully settled (the radius already covers
+   every corner, so the switch is invisible); `is-restored` fades
+   session-restored finds in gently. The dust canvas and the keyboard
+   targets sit above the content but are transparent to the pointer.
+   Nothing — no cards, no outlines, no labels — renders in the idle state.
+--------------------------------------------------------------------------- */
+.ha-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ha-art {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  --p: 0;
+  --r: 0px;
+  --mx: 50%;
+  --my: 50%;
+  --dx: 50%;
+  --dy: 50%;
+  --tx: 50%;
+  --ty: 50%;
+  --ink: 0;
+  display: none;
+}
+.ha-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: calc(var(--p) * 1.1);
+  filter: blur(calc((1 - var(--p)) * 5px));
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-mask-image:
+    radial-gradient(circle var(--r) at var(--mx) var(--my),
+      #000 calc(var(--r) * 0.55), transparent calc(var(--r) * 0.96)),
+    radial-gradient(circle calc(var(--r) * 0.42) at var(--dx) var(--dy),
+      #000 calc(var(--r) * 0.22), transparent calc(var(--r) * 0.38)),
+    radial-gradient(circle calc(var(--r) * 0.62) at var(--tx) var(--ty),
+      #000 calc(var(--r) * 0.3), transparent calc(var(--r) * 0.58));
+  mask-image:
+    radial-gradient(circle var(--r) at var(--mx) var(--my),
+      #000 calc(var(--r) * 0.55), transparent calc(var(--r) * 0.96)),
+    radial-gradient(circle calc(var(--r) * 0.42) at var(--dx) var(--dy),
+      #000 calc(var(--r) * 0.22), transparent calc(var(--r) * 0.38)),
+    radial-gradient(circle calc(var(--r) * 0.62) at var(--tx) var(--ty),
+      #000 calc(var(--r) * 0.3), transparent calc(var(--r) * 0.58));
+}
+/* ink diffusion — the blue wash spreading under the opening membrane */
+.ha-ink {
+  position: absolute;
+  inset: -26%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at var(--mx) var(--my),
+    rgb(0 98 155 / 0.16),
+    rgb(0 98 155 / 0.05) 45%,
+    transparent 68%
+  );
+  opacity: var(--ink);
+  filter: blur(9px);
+  transform: scale(calc(0.9 + var(--p) * 0.3));
+}
+.ha-art.is-found img {
+  opacity: 0.96;
+  filter: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.ha-art.is-found .ha-ink {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+/* tiny sparkle hints — one faint four-point star with two micro dots
+   floats where each artwork sleeps, quietly saying "look here" on the
+   otherwise pristine page. GPU-only twinkle (opacity + scale, staggered
+   per zone); it dissolves the moment its artwork is found and stays gone
+   for the session. */
+.ha-hint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 .6 11.66 8.34 19.4 10 11.66 11.66 10 19.4 8.34 11.66 .6 10 8.34 8.34Z' fill='%234c93c2'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.5;
+  animation: ha-twinkle 3.8s ease-in-out var(--hint-delay, 0s) infinite;
+}
+.ha-hint::before,
+.ha-hint::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  margin: -1.5px 0 0 -1.5px;
+  border-radius: 50%;
+  background: rgb(76 147 194 / 0.75);
+  animation: ha-twinkle 3.8s ease-in-out calc(var(--hint-delay, 0s) + 1.3s) infinite;
+}
+.ha-hint::before {
+  transform: translate(-19px, -10px);
+}
+.ha-hint::after {
+  transform: translate(15px, 13px);
+}
+@keyframes ha-twinkle {
+  0%,
+  100% {
+    opacity: 0.16;
+    scale: 0.8;
+  }
+  50% {
+    opacity: 0.62;
+    scale: 1.12;
+  }
+}
+.ha-art.is-found .ha-hint,
+.ha-art.is-found .ha-hint::before,
+.ha-art.is-found .ha-hint::after {
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.ha-art.is-restored img {
+  animation: ha-rise 1s ease both;
+}
+@keyframes ha-rise {
+  from {
+    opacity: 0;
+  }
+}
+/* ambient cursor glow — a faint blue breath while exploring, behind the
+   content so it reads as atmosphere under the composition */
+.ha-cursor-glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(0 98 155 / 0.055), transparent 62%);
+  opacity: var(--go, 0);
+  transform: translate3d(var(--gx, -160px), var(--gy, -160px), 0);
+  will-change: transform, opacity;
+}
+.ha-dust {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+}
+.ha-keys {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+.ha-key {
+  position: absolute;
+  display: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  opacity: 0;
+  pointer-events: none;
+  appearance: none;
+}
+.ha-key:focus,
+.ha-key:focus-visible {
+  outline: none; /* the reveal itself is the focus feedback */
+}
+@media (prefers-reduced-motion: reduce) {
+  .ha-hint,
+  .ha-hint::before,
+  .ha-hint::after {
+    animation: none;
+    opacity: 0.42;
+  }
+  .ha-hint::before,
+  .ha-hint::after {
+    opacity: 0.3;
+  }
+  .ha-art img {
+    filter: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+    transition: opacity 0.45s ease;
+  }
+  .ha-art.is-found img {
+    opacity: 0.96;
+  }
+  .ha-art.is-restored img {
+    animation: ha-soft 0.7s ease both;
+  }
+  .ha-ink,
+  .ha-cursor-glow {
+    display: none;
+  }
+}
+@keyframes ha-soft {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Reference poster: all desktop positions share the supplied 1600 × 900 grid. */
+body { background:#050505; }
+.reference-hero { min-height:100svh; padding:2px; background:#050505; }
+.hero-poster { position:relative; width:100%; min-height:calc(100svh - 4px); aspect-ratio:1600/900; overflow:hidden; border:2px solid #c6c6c9; border-radius:clamp(26px,3vw,49px); background:#f8f8fa; isolation:isolate; }
+.hero-poster::after { content:''; position:absolute; inset:0; z-index:10; pointer-events:none; border-radius:inherit; box-shadow:inset 0 0 35px #8a8c9510; }
+.chrome-backdrop,.ribbon-canvas { position:absolute; inset:0; width:100%; height:100%; }
+.chrome-backdrop { z-index:0; pointer-events:none; }
+.ribbon-canvas { z-index:2; touch-action:pan-y; outline-offset:-8px; }
+.branch-caption { position:absolute; z-index:3; left:3.8%; top:17.9%; margin:0; font:400 clamp(12px,1.18vw,24px)/1.16 Arial,sans-serif; color:#303139; pointer-events:none; }
+.branch-caption span,.hero-motto>span { display:block; width:55px; height:3px; margin-top:17px; background:linear-gradient(90deg,#3553a2,#83c1db); }
+.hero-title { position:absolute; z-index:3; left:27.3%; top:19.4%; margin:0; display:flex; align-items:center; gap:1.55vw; height:11.6%; color:#020202; pointer-events:none; }
+.hero-title>img { width:6.2vw; height:auto; }
+.title-divider { height:90%; width:2px; background:#2b2b2c; margin-right:.1vw; }
+.hero-title>span:not(.title-divider):not(.sr-only) { font-family:Arial,'Helvetica Neue',sans-serif; font-size:7.8vw; font-weight:1000; letter-spacing:-.065em; white-space:nowrap; line-height:1; transform:scaleY(1.05); }
+.reference-stats { position:absolute; z-index:3; left:89.6%; top:34.8%; color:#20232e; pointer-events:none; }
+.reference-stat { position:relative; padding-bottom:2.8vw; }
+.reference-stat+.reference-stat::before { content:''; position:absolute; left:0; top:-1.1vw; width:2.45vw; height:2px; background:#b9bac1; }
+.reference-stat strong { font-size:2.6vw; font-weight:750; line-height:1; letter-spacing:-.045em; }
+.reference-stat strong span { color:#3555a3; font-size:.82em; margin-left:.1em; }
+.reference-stat p { margin:.55vw 0 0; font-size:.85vw; font-weight:600; text-transform:uppercase; letter-spacing:.31em; color:#787b88; }
+.hero-motto { position:absolute; z-index:3; left:3.8%; bottom:6.8%; color:#737684; text-transform:uppercase; font-size:.73vw; font-weight:650; letter-spacing:.32em; white-space:nowrap; }
+.hero-motto>span { margin:0 0 14px; }
+.hero-motto b { padding:0 1.1vw; font-weight:500; }
+.campus-sketch { position:absolute; z-index:3; width:38%; right:2.4%; bottom:3.4%; height:16%; object-fit:fill; mix-blend-mode:multiply; opacity:.78; pointer-events:none; }
+header.reference-nav { position:absolute; top:3.2vw; top:3.2svh; left:3.9%; right:3.9%; z-index:50; }
+.reference-nav nav { display:flex; align-items:center; height:3.7vw; min-height:52px; width:100%; padding:0 1vw; gap:1.4vw; border-radius:99px; background:#fbfbfdeb; box-shadow:0 11px 30px #34334d13; backdrop-filter:blur(18px); }
+.reference-nav .menu-trigger { display:grid; place-items:center; width:2.8vw; min-width:32px; height:40px; border:0; border-radius:50%; color:#3e4555; background:transparent; cursor:pointer; }
+.reference-nav .home-orb { display:grid; place-items:center; width:3.7vw; min-width:48px; height:3.7vw; min-height:48px; margin-left:-.6vw; background:#fff; box-shadow:0 3px 17px #383d5212; border-radius:50%; }
+.reference-nav .home-orb img { width:70%; }
+.reference-nav ul { display:flex; align-items:center; padding:0; list-style:none; margin:0; gap:2.7vw; }
+.reference-nav .nav-link { color:#333846; font-size:1.1vw; font-weight:550; text-decoration:none; padding:12px 0; display:block; }
+.reference-nav a:hover { color:#3553a2; }
+@media(min-aspect-ratio:16/9) and (min-width:701px) { .hero-poster { aspect-ratio:auto; height:calc(100svh - 4px); } }
+@media(max-width:700px) {
+ .hero-poster { min-height:calc(100svh - 4px); aspect-ratio:auto; border-radius:28px; }
+ header.reference-nav { top:20px; left:6%; right:6%; }
+ .reference-nav nav { height:56px; gap:12px; padding:0 10px; }
+ .reference-nav ul { gap:14px; }
+ .reference-nav .nav-link { font-size:11px; }
+ .reference-nav .home-orb { min-width:40px; min-height:40px; }
+ .branch-caption { top:15%; left:7%; font-size:13px; }
+ .branch-caption span { margin-top:11px; width:35px; height:2px; }
+ .hero-title { top:28%; left:16%; height:8%; gap:3vw; }
+ .hero-title>img { width:12vw; }
+ .hero-title>span:not(.title-divider):not(.sr-only) { font-size:12vw; }
+ .ribbon-canvas,.chrome-backdrop { top:26%; height:49%; width:112%; left:-6%; }
+ .reference-stats { left:8%; right:8%; top:72%; display:flex; justify-content:space-between; }
+ .reference-stat { padding:0; }
+ .reference-stat strong { font-size:30px; }
+ .reference-stat p { font-size:9px; margin-top:7px; letter-spacing:.23em; }
+ .reference-stat+.reference-stat::before { display:none; }
+ .hero-motto { left:7%; bottom:5%; font-size:7px; letter-spacing:.16em; }
+ .hero-motto>span { width:34px; height:2px; margin-bottom:10px; }
+ .hero-motto b { padding:0 6px; }
+ .campus-sketch { bottom:10%; width:57%; right:4%; height:9%; opacity:.6; }
+}
+@media(max-width:380px) { .reference-nav ul { gap:10px; } .reference-nav .nav-link { font-size:10px; } .reference-nav nav { gap:7px; } }
+
+.hero-title>span:not(.title-divider):not(.sr-only) { font-size:7.2vw; }
+.reference-nav nav { max-width:none; }
+@media(max-width:700px) { .hero-title>span:not(.title-divider):not(.sr-only) { font-size:12vw; } }
+
+.hero-title>img,.reference-nav .home-orb img { object-fit:contain; mix-blend-mode:multiply; border-radius:6px; }
+/* Liquid glass navigation adapted from the supplied animation. */
+.liquid-nav-header { position:absolute; z-index:50; top:4px; left:4%; right:4%; }
+.liquid-nav-header nav { width:100%; margin:0 auto; }
+.liquid-nav-host { width:100%; height:140px; }
+.liquid-nav-host svg { display:block; width:100%; height:100%; overflow:visible; }
+.liquid-nav-host text { fill:#35414e; font:600 18px Arial,sans-serif; user-select:none; }
+.liquid-nav-host [role=button] { cursor:pointer; outline:none; touch-action:manipulation; }
+.liquid-nav-host [role=button]:focus-visible>rect { stroke:#3553a2; stroke-width:2; }
+.liquid-nav-host .active-icon { fill:none; stroke:#29323d; stroke-width:1.8; stroke-linejoin:round; stroke-linecap:round; }
+.liquid-nav--compact { height:126px; }
+.liquid-nav--compact text { font-size:11px; font-weight:600; }
+.liquid-nav-loading { display:flex; justify-content:space-around; align-items:center; margin-top:32px; height:56px; border-radius:99px; background:#f4f5f7; color:#35414e; font-size:14px; }
+@media (min-width:901px) {
+ .hero-poster { min-height:max(650px,calc(100svh - 4px)); }
+}
+@media (min-width:701px) and (max-width:900px) {
+ .hero-poster { min-height:max(820px,calc(100svh - 4px)); aspect-ratio:auto; border-radius:32px; }
+ .branch-caption { top:145px; left:6%; font-size:16px; }
+ .hero-title { top:26%; left:21%; height:9%; gap:2.5vw; }
+ .hero-title>img { width:10vw; }
+ .hero-title>span:not(.title-divider):not(.sr-only) { font-size:10vw; }
+ .ribbon-canvas { top:25%; height:51%; width:112%; left:-6%; }
+ .reference-stats { left:9%; right:9%; top:73%; display:flex; justify-content:space-between; }
+ .reference-stat { padding:0; }
+ .reference-stat strong { font-size:36px; }
+ .reference-stat p { font-size:11px; margin-top:9px; }
+ .reference-stat+.reference-stat::before { display:none; }
+ .campus-sketch { width:48%; height:10%; bottom:8%; }
+ .hero-motto { bottom:4%; left:6%; font-size:10px; letter-spacing:.2em; }
+}
+@media (max-width:700px) {
+ .liquid-nav-header { top:6px; left:4%; right:4%; }
+ .hero-poster { min-height:max(800px,calc(100svh - 4px)); }
+ .branch-caption { top:150px; }
+ .hero-title { top:29%; }
+ .ribbon-canvas { top:28%; height:46%; }
+ .reference-stats { top:73%; }
+ .liquid-nav-loading { font-size:10px; }
+}
+@media (max-width:350px) {
+ .liquid-nav--compact text { font-size:10px; }
+ .branch-caption { font-size:12px; }
+ .hero-motto { font-size:6.5px; letter-spacing:.12em; }
+}
+@media (prefers-reduced-motion:reduce) { .liquid-nav-host * { scroll-behavior:auto; } }

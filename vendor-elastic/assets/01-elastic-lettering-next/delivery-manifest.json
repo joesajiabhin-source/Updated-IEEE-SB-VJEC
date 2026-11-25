@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "kind": "delivery-package",
+  "id": "elastic-lettering",
+  "templateId": "TPL-0183",
+  "title": "Elastic Lettering",
+  "version": "0.1.0-prototype.1",
+  "status": "pre-commerce prototype",
+  "deliveryTarget": "next",
+  "entry": "adapters/react/ElasticLettering.js",
+  "canonicalEntry": "src/elastic-lettering.js",
+  "configuration": "src/configuration.js",
+  "stylesheet": "src/styles.css",
+  "adapter": {
+    "id": "react",
+    "entry": "adapters/react/ElasticLettering.js"
+  },
+  "dependencies": [],
+  "hostDependencies": [
+    "next",
+    "react",
+    "react-dom"
+  ],
+  "lifecycle": [
+    "mountElasticLettering",
+    "ready",
+    "update",
+    "replay",
+    "release",
+    "getState",
+    "destroy"
+  ],
+  "package": {
+    "archive": "elastic-lettering-next-0.1.0-prototype.1.zip",
+    "root": "elastic-lettering-next-0.1.0-prototype.1",
+    "install": "INSTALL.md",
+    "include": [
+      "CUSTOMIZATION.md",
+      "INSTALL.md",
+      "MEDIA_PROVENANCE.md",
+      "README.md",
+      "THIRD_PARTY_NOTICES.md",
+      "WEBSITE-USE.md",
+      "adapters/react/ElasticLettering.js",
+      "delivery-manifest.json",
+      "src/configuration.js",
+      "src/elastic-lettering.js",
+      "src/glyphs.js",
+      "src/styles.css"
+    ]
+  }
+}
